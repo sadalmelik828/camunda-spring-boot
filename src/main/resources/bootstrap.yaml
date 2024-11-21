@@ -45,9 +45,9 @@ camunda:
       deployment-aware: ${JE_DEPLOYMENT_AWARE:false}
     authorization:
       enabled: ${ENABLE_AUTH:false}
+    history-level: ${CFG_HISTORY_LEVEL:full}
     generic-properties:
       properties:
-        history: ${CFG_HISTORY_LEVEL:full}
         historyCleanupDegreeOfParallelism: ${CFG_HISTORY_PARALLELISM:3}
         historyCleanupBatchSize: ${CFG_HISTORY_BATCH_SIZE:100}
         historyCleanupStrategy: ${CFG_HISTORY_CLEANUP_STRATEGY:removalTimeBased}
