@@ -53,6 +53,9 @@ camunda:
         historyCleanupStrategy: ${CFG_HISTORY_CLEANUP_STRATEGY:removalTimeBased}
         historyRemovalTimeStrategy: ${CFG_HISTORY_REMOVAL_TIME_STRATEGY:end}
         historyCleanupJobLogTimeToLive: ${CFG_HISTORY_CLEANUP_JOB_TTL:P5D}
+        historyTimeToLive: ${CFG_HISTORY_TIME_TO_LIVE:P45D}
+        historyCleanupBatchWindowStartTime: ${CFG_HISTORY_CLEANUP_BATCH_WINDOW_START:03:00}
+        historyCleanupBatchWindowEndTime: ${CFG_HISTORY_CLEANUP_BATCH_WINDOW_END:12:00}
         taskMetricsTimeToLive: ${CFG_TASK_METRICS_TTL:P30D}
         failedJobRetryTimeCycle: ${CFG_JOB_RETRY_TIME_CYCLE:R5/PT5M}
 
