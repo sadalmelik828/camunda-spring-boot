@@ -96,6 +96,13 @@ log:
     enabled: ${ENABLED_EXPORTER_LOG:false}
     url: ${URL_EXPORTER_LOG:http://localhost:4317}
 
+logging:
+  level:
+    net:
+      ttddyy:
+        dsproxy:
+          listener: ${DEBUG_SQL:NONE}
+
 persistence:
   postgresql:
     driverClassName: ${DB_DRIVER:org.postgresql.Driver}
