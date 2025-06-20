@@ -13,6 +13,15 @@ spring:
       enabled: ${VIRTUAL_THREADS_ENABLED:true}
   application:
     name: ms-camunda
+  config:
+    import:
+      - optional:classpath:cibseven-webclient.properties
+cibseven:
+  webclient:
+    services:
+      basePath: /webapp/services/v1
+    engineRest:
+      url: http://localhost:8080
 camunda:
   bpm:
     enabled: true
@@ -101,13 +110,13 @@ logging:
     net:
       ttddyy:
         dsproxy:
-          listener: ${DEBUG_SQL:NONE}
+          listener: ${DEBUG_SQL:OFF}
 
 persistence:
   postgresql:
     driverClassName: ${DB_DRIVER:org.postgresql.Driver}
-    jdbcUrl: ${DB_URL:jdbc:postgresql://localhost:5432/camunda722}
-    username: ${DB_USER:camunda_user}
+    jdbcUrl: ${DB_URL:jdbc:postgresql://localhost:5432/bpmn}
+    username: ${DB_USER:bpmn_user}
     password: ${DB_PASSWORD:>K8Mqs<BArq2QOfP]5E}
     hikari:
       poolName: ${HIKARI_POOL_NAME:camundaPool}

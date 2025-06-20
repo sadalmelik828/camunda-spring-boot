@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.5</version>
+		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nttdata.camunda</groupId>
 	<artifactId>ms-camunda</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	<name>ms-camunda</name>
-	<description>Spring Boot microservice with Camunda Engine.</description>
+	<description>Spring Boot microservice with CIB Seven Engine.</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -35,8 +35,8 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-		<spring-cloud.version>2023.0.3</spring-cloud.version>
-		<camunda.spring.boot.starter.version>7.22.0</camunda.spring.boot.starter.version>
+		<spring-cloud.version>2025.0.0</spring-cloud.version>
+		<cibseven.spring.boot.starter.version>2.0.0</cibseven.spring.boot.starter.version>
 	</properties>
 
 	<dependencies>
@@ -83,7 +83,7 @@
 		<dependency>
 			<groupId>io.opentelemetry.instrumentation</groupId>
 			<artifactId>opentelemetry-logback-appender-1.0</artifactId>
-			<version>1.33.2-alpha</version>
+			<version>2.7.0-alpha</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.gavlyukovskiy</groupId>
@@ -96,26 +96,24 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.camunda.bpm.springboot</groupId>
-			<artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
+			<groupId>org.cibseven.bpm.springboot</groupId>
+			<artifactId>cibseven-bpm-spring-boot-starter-webapp</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.camunda.bpm.springboot</groupId>
-			<artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.camunda.bpm/camunda-engine-plugin-spin -->
-		<dependency>
-			<groupId>org.camunda.bpm</groupId>
-			<artifactId>camunda-engine-plugin-spin</artifactId>
+			<groupId>org.cibseven.bpm.springboot</groupId>
+			<artifactId>cibseven-bpm-spring-boot-starter-rest</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.camunda.spin</groupId>
-			<artifactId>camunda-spin-dataformat-all</artifactId>
+			<groupId>org.cibseven.bpm</groupId>
+			<artifactId>cibseven-engine-plugin-spin</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.camunda.bpm/camunda-engine-plugin-connect -->
 		<dependency>
-			<groupId>org.camunda.bpm</groupId>
-			<artifactId>camunda-engine-plugin-connect</artifactId>
+			<groupId>org.cibseven.spin</groupId>
+			<artifactId>cibseven-spin-dataformat-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.cibseven.bpm</groupId>
+			<artifactId>cibseven-engine-plugin-connect</artifactId>
 		</dependency>
 
 		<dependency>
@@ -134,21 +132,16 @@
 			<version>21.1.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.groovy/groovy-all -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.apache.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>4.0.23</version>
+			<version>4.0.22</version>
 			<type>pom</type>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>5.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -172,9 +165,9 @@
 				<scope>import</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.camunda.bpm</groupId>
-				<artifactId>camunda-bom</artifactId>
-				<version>${camunda.spring.boot.starter.version}</version>
+				<groupId>org.cibseven.bpm</groupId>
+				<artifactId>cibseven-bom</artifactId>
+				<version>${cibseven.spring.boot.starter.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
