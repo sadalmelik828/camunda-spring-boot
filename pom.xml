@@ -121,23 +121,29 @@
 			<artifactId>jaxb-runtime</artifactId>
 		</dependency>
 		<!-- Use GraalVM JavaScript for JDK > 14 -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.graalvm.js</groupId>
 			<artifactId>js</artifactId>
-			<version>21.1.0</version>
+			<version>21.3.12</version>
 		</dependency>
 		<dependency>
 			<groupId>org.graalvm.js</groupId>
 			<artifactId>js-scriptengine</artifactId>
-			<version>21.1.0</version>
-		</dependency>
+			<version>21.3.12</version>
+		</dependency>-->
 		<!-- https://mvnrepository.com/artifact/org.apache.groovy/groovy-all -->
-		<!--<dependency>
+		<dependency>
 			<groupId>org.apache.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
 			<version>4.0.22</version>
 			<type>pom</type>
-		</dependency>-->
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.groovy</groupId>
+					<artifactId>groovy-jsr223</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
