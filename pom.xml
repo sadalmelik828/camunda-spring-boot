@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nttdata.camunda</groupId>
-	<artifactId>ms-camunda</artifactId>
+	<artifactId>ms-bpmn</artifactId>
 	<version>0.0.8</version>
-	<name>ms-camunda</name>
-	<description>Spring Boot microservice with CIB Seven Engine.</description>
+	<name>ms-bpmn</name>
+	<description>Spring Boot microservice with BPMN CIB Seven Engine.</description>
 	<url/>
 	<licenses>
 		<license/>
