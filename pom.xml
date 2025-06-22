@@ -115,23 +115,19 @@
 			<groupId>org.cibseven.bpm</groupId>
 			<artifactId>cibseven-engine-plugin-connect</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.cibseven.connect</groupId>
+			<artifactId>cibseven-connect-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.cibseven.connect</groupId>
+			<artifactId>cibseven-connect-connectors-all</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>
 			<artifactId>jaxb-runtime</artifactId>
 		</dependency>
-		<!-- Use GraalVM JavaScript for JDK > 14 -->
-		<!--<dependency>
-			<groupId>org.graalvm.js</groupId>
-			<artifactId>js</artifactId>
-			<version>21.3.12</version>
-		</dependency>
-		<dependency>
-			<groupId>org.graalvm.js</groupId>
-			<artifactId>js-scriptengine</artifactId>
-			<version>21.3.12</version>
-		</dependency>-->
-		<!-- https://mvnrepository.com/artifact/org.apache.groovy/groovy-all -->
 		<dependency>
 			<groupId>org.apache.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
@@ -173,6 +169,13 @@
 			<dependency>
 				<groupId>org.cibseven.bpm</groupId>
 				<artifactId>cibseven-bom</artifactId>
+				<version>${cibseven.spring.boot.starter.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.cibseven.connect</groupId>
+				<artifactId>cibseven-connect-bom</artifactId>
 				<version>${cibseven.spring.boot.starter.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
