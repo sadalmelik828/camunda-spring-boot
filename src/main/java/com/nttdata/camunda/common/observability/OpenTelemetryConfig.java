@@ -13,7 +13,7 @@ import io.opentelemetry.sdk.logs.SdkLoggerProviderBuilder;
 import io.opentelemetry.sdk.logs.export.BatchLogRecordProcessor;
 import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
-import io.opentelemetry.semconv.ResourceAttributes;
+import io.opentelemetry.semconv.ServiceAttributes;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -39,7 +39,8 @@ public class OpenTelemetryConfig {
             openTelemetrySdkBuilder.setLoggerProvider(sdkLoggerProvider);
         }
         OpenTelemetrySdk openTelemetrySdk = openTelemetrySdkBuilder.build();
-        OpenTelemetryAppender.install(openTelemetrySdk);
+        if (logExporterEnabled)
+            OpenTelemetryAppender.install(openTelemetrySdk);
         return openTelemetrySdk;
     }
 
@@ -47,7 +48,7 @@ public class OpenTelemetryConfig {
     SdkLoggerProvider otelSdkLoggerProvider(Environment environment,
                                             ObjectProvider<LogRecordProcessor> logRecordProcessors) {
         String applicationName = environment.getProperty("spring.application.name", "application");
-        Resource springResource = Resource.create(Attributes.of(ResourceAttributes.SERVICE_NAME, applicationName));
+        Resource springResource = Resource.create(Attributes.of(ServiceAttributes.SERVICE_NAME, applicationName));
         SdkLoggerProviderBuilder builder = SdkLoggerProvider.builder()
             .setResource(Resource.getDefault().merge(springResource));
         logRecordProcessors.orderedStream().forEach(builder::addLogRecordProcessor);
