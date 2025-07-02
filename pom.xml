@@ -11,7 +11,7 @@
 	<groupId>com.nttdata.camunda</groupId>
 	<artifactId>ms-camunda</artifactId>
 	<version>0.0.8</version>
-	<name>ms-camunda</name>
+	<name>ms-bpmn-engine</name>
 	<description>Application with spring boot framework with Camunda based BPMN engine embedded exposing API Rest and webapps.</description>
 	<url/>
 	<licenses>
