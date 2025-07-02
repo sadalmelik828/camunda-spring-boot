@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.nttdata.camunda</groupId>
     <artifactId>ms-bpmn-engine</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
     <name>ms-bpmn-engine</name>
     <description>Application with spring boot framework and BPMN engine Camunda based exposing API Rest and
         webapps.
