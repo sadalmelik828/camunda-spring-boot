@@ -12,7 +12,7 @@ spring:
     virtual:
       enabled: ${VIRTUAL_THREADS_ENABLED:true}
   application:
-    name: ms-camunda
+    name: ms-bpmn-engine
   config:
     import:
       - optional:classpath:cibseven-webclient.properties
@@ -75,8 +75,8 @@ management:
     enabled: ${ENABLED_TRACING:false}
   metrics:
     tags:
-      application: ms-camunda
-      k8sPodName: ${MS_POD_NAME:default_camunda_pod}
+      application: ms-bpmn-engine
+      k8sPodName: ${MS_POD_NAME:default_ms_bpmn_engine_pod}
     distribution:
       percentiles-histogram:
         http:
@@ -119,7 +119,7 @@ persistence:
     username: ${DB_USER:bpmn_user}
     password: ${DB_PASSWORD:>K8Mqs<BArq2QOfP]5E}
     hikari:
-      poolName: ${HIKARI_POOL_NAME:camundaPool}
+      poolName: ${HIKARI_POOL_NAME:bpmnPool}
       keepAliveTime: ${HIKARI_KEEP_ALIVE_TIME:60000}
       maxLifeTime: ${HIKARI_MAX_LIFE_TIME:300000}
       connectionTimeout: ${HIKARI_CONN_TIME_OUT:30000}

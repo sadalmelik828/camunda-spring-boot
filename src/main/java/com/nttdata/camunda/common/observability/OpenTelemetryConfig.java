@@ -39,7 +39,8 @@ public class OpenTelemetryConfig {
             openTelemetrySdkBuilder.setLoggerProvider(sdkLoggerProvider);
         }
         OpenTelemetrySdk openTelemetrySdk = openTelemetrySdkBuilder.build();
-        OpenTelemetryAppender.install(openTelemetrySdk);
+        if (logExporterEnabled)
+            OpenTelemetryAppender.install(openTelemetrySdk);
         return openTelemetrySdk;
     }
 
