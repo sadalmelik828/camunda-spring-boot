@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.5</version>
+		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nttdata.camunda</groupId>
 	<artifactId>ms-camunda</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	<name>ms-camunda</name>
-	<description>Spring Boot microservice with Camunda Engine.</description>
+	<description>Application with spring boot framework with Camunda based BPMN engine embedded exposing API Rest and webapps.</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -35,8 +35,8 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-		<spring-cloud.version>2023.0.3</spring-cloud.version>
-		<camunda.spring.boot.starter.version>7.22.0</camunda.spring.boot.starter.version>
+		<spring-cloud.version>2025.0.0</spring-cloud.version>
+		<camunda.spring.boot.starter.version>7.23.0</camunda.spring.boot.starter.version>
 	</properties>
 
 	<dependencies>
@@ -83,7 +83,7 @@
 		<dependency>
 			<groupId>io.opentelemetry.instrumentation</groupId>
 			<artifactId>opentelemetry-logback-appender-1.0</artifactId>
-			<version>1.33.2-alpha</version>
+			<version>2.7.0-alpha</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.gavlyukovskiy</groupId>
@@ -116,6 +116,14 @@
 		<dependency>
 			<groupId>org.camunda.bpm</groupId>
 			<artifactId>camunda-engine-plugin-connect</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.camunda.connect</groupId>
+			<artifactId>camunda-connect-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.camunda.connect</groupId>
+			<artifactId>camunda-connect-connectors-all</artifactId>
 		</dependency>
 
 		<dependency>
