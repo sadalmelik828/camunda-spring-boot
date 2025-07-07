@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.nttdata.camunda</groupId>
     <artifactId>ms-bpmn-engine</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
     <name>ms-bpmn-engine</name>
     <description>Application with spring boot framework and BPMN engine Camunda based exposing API Rest and
         webapps.
@@ -38,7 +38,7 @@
     <properties>
         <java.version>21</java.version>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
-        <camunda.spring.boot.starter.version>7.23.0</camunda.spring.boot.starter.version>
+        <eximeebpms.spring.boot.starter.version>1.0.0</eximeebpms.spring.boot.starter.version>
     </properties>
 
     <dependencies>
@@ -63,6 +63,11 @@
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-otlp</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>4.31.0</version>
         </dependency>
         <!--For Tracing Context Propagation-->
         <dependency>
@@ -98,34 +103,34 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.camunda.bpm.springboot</groupId>
-            <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
+            <groupId>org.eximeebpms.bpm.springboot</groupId>
+            <artifactId>eximeebpms-bpm-spring-boot-starter-webapp</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.bpm.springboot</groupId>
-            <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+            <groupId>org.eximeebpms.bpm.springboot</groupId>
+            <artifactId>eximeebpms-bpm-spring-boot-starter-rest</artifactId>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.camunda.bpm/camunda-engine-plugin-spin -->
         <dependency>
-            <groupId>org.camunda.bpm</groupId>
-            <artifactId>camunda-engine-plugin-spin</artifactId>
+            <groupId>org.eximeebpms.bpm</groupId>
+            <artifactId>eximeebpms-engine-plugin-spin</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.spin</groupId>
-            <artifactId>camunda-spin-dataformat-all</artifactId>
+            <groupId>org.eximeebpms.spin</groupId>
+            <artifactId>eximeebpms-spin-dataformat-all</artifactId>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.camunda.bpm/camunda-engine-plugin-connect -->
         <dependency>
-            <groupId>org.camunda.bpm</groupId>
-            <artifactId>camunda-engine-plugin-connect</artifactId>
+            <groupId>org.eximeebpms.bpm</groupId>
+            <artifactId>eximeebpms-engine-plugin-connect</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.connect</groupId>
-            <artifactId>camunda-connect-core</artifactId>
+            <groupId>org.eximeebpms.connect</groupId>
+            <artifactId>eximeebpms-connect-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.connect</groupId>
-            <artifactId>camunda-connect-connectors-all</artifactId>
+            <groupId>org.eximeebpms.connect</groupId>
+            <artifactId>eximeebpms-connect-connectors-all</artifactId>
         </dependency>
 
         <dependency>
@@ -156,11 +161,6 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>5.1.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
@@ -182,9 +182,9 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.camunda.bpm</groupId>
-                <artifactId>camunda-bom</artifactId>
-                <version>${camunda.spring.boot.starter.version}</version>
+                <groupId>org.eximeebpms.bpm</groupId>
+                <artifactId>eximeebpms-bom</artifactId>
+                <version>${eximeebpms.spring.boot.starter.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
