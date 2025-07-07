@@ -1,12 +1,12 @@
 package com.nttdata.camunda.application.services.camunda;
 
-import org.camunda.bpm.application.impl.event.ProcessApplicationEventListenerPlugin;
-import org.camunda.bpm.engine.impl.cfg.ProcessEnginePlugin;
-import org.camunda.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin;
-import org.camunda.bpm.engine.rest.security.auth.ProcessEngineAuthenticationFilter;
-import org.camunda.bpm.engine.rest.security.auth.impl.HttpBasicAuthenticationProvider;
-import org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin;
-import org.camunda.spin.plugin.impl.SpinProcessEnginePlugin;
+import org.operaton.bpm.application.impl.event.ProcessApplicationEventListenerPlugin;
+import org.operaton.bpm.engine.impl.cfg.ProcessEnginePlugin;
+import org.operaton.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin;
+import org.operaton.bpm.engine.rest.security.auth.ProcessEngineAuthenticationFilter;
+import org.operaton.bpm.engine.rest.security.auth.impl.HttpBasicAuthenticationProvider;
+import org.operaton.connect.plugin.impl.ConnectProcessEnginePlugin;
+import org.operaton.spin.plugin.impl.SpinProcessEnginePlugin;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
